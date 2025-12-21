@@ -1,0 +1,608 @@
+/* --- CSS VARIABLES & RESET --- */
+:root {
+    --primary: #0a192f;
+    /* Deep Navy */
+    --secondary: #172a45;
+    /* Lighter Navy */
+    --accent: #00d084;
+    /* Bull Market Green */
+    --danger: #ef4444;
+    /* Bear Market Red */
+    --text-light: #e2e8f0;
+    --text-dark: #334155;
+    --bg-light: #f8fafc;
+    --white: #ffffff;
+    --gold: #fbbf24;
+
+    --font-head: 'Playfair Display', serif;
+    --font-body: 'Lato', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    background: var(--bg-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- TYPOGRAPHY --- */
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-head);
+    font-weight: 700;
+
+    .nav-links a:hover {
+        color: var(--primary);
+    }
+
+    h1 {
+        font-size: 3.5rem;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 1rem;
+        position: relative;
+        display: inline-block;
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .section-header p {
+        font-size: 1.1rem;
+        color: #64748b;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    /* --- NAVIGATION --- */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.2rem 5%;
+        background: var(--white);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .logo {
+        font-family: var(--font-head);
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-decoration: none;
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: var(--text-dark);
+        font-weight: 700;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        transition: color 0.3s;
+    }
+
+    color: var(--primary);
+}
+
+/* Mobile Toggle */
+.mobile-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.mobile-toggle.active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.mobile-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-toggle.active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+.btn-nav {
+    background-color: var(--primary);
+    color: var(--accent) !important;
+    padding: 0.6rem 1.5rem;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+.btn-nav:hover {
+    background-color: var(--secondary);
+    transform: translateY(-2px);
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 5% 6rem 5%;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    min-height: 90vh;
+    position: relative;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+    z-index: 2;
+}
+
+.tagline {
+    display: inline-block;
+    background: rgba(0, 208, 132, 0.1);
+    color: #059669;
+    /* Darker green for text */
+    padding: 0.5rem 1rem;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 1.5rem;
+    border-left: 3px solid var(--accent);
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: #475569;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+}
+
+.cta-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-primary,
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--white);
+    box-shadow: 0 10px 15px -3px rgba(10, 25, 47, 0.3);
+}
+
+.btn-primary:hover {
+    background: var(--secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 15px 20px -3px rgba(10, 25, 47, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.btn-secondary:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+/* Book 3D Mockup */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    perspective: 1000px;
+    z-index: 2;
+}
+
+.book-container {
+    position: relative;
+    width: 320px;
+    height: 480px;
+    transform-style: preserve-3d;
+    transform: rotateY(-25deg) rotateX(5deg);
+    transition: transform 0.5s ease;
+    box-shadow: 25px 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.book-container:hover {
+    transform: rotateY(-15deg) rotateX(2deg) translateY(-10px);
+}
+
+.book-cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+    border: 2px solid #2d3e56;
+}
+
+/* Mockup Design details */
+.book-cover::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.book-title {
+    font-family: var(--font-head);
+    color: var(--white);
+    font-size: 2.5rem;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 1rem;
+}
+
+.book-author {
+    color: var(--accent);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 1rem;
+}
+
+.book-spine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 100%;
+    background: #050d18;
+    transform: rotateY(-90deg) translateX(-20px);
+    transform-origin: left;
+}
+
+/* --- TICKER TAPE --- */
+.ticker-wrap {
+    width: 100%;
+    background: var(--primary);
+    color: var(--white);
+    padding: 12px 0;
+    border-top: 1px solid #1e293b;
+    border-bottom: 1px solid #1e293b;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    z-index: 5;
+}
+
+.ticker {
+    display: inline-block;
+    animation: ticker 25s linear infinite;
+}
+
+.ticker:hover {
+    animation-play-state: paused;
+}
+
+.ticker-item {
+    display: inline-block;
+    padding: 0 2rem;
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.up {
+    color: var(--accent);
+}
+
+.down {
+    color: var(--danger);
+}
+
+@keyframes ticker {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* --- ABOUT SECTION --- */
+.section {
+    padding: 6rem 5%;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 4px;
+    border-top: 4px solid var(--accent);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--secondary);
+}
+
+.feature-card p {
+    color: #64748b;
+}
+
+/* --- REVIEWS (Social Proof) --- */
+.reviews-section {
+    background: var(--primary);
+    color: var(--white);
+    text-align: center;
+}
+
+.reviews-section h2 {
+    color: var(--white);
+}
+
+.reviews-section p {
+    color: #94a3b8;
+}
+
+.review-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2.5rem;
+    border-radius: 4px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stars {
+    color: var(--gold);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.review-text {
+    font-style: italic;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-head);
+}
+
+.review-author {
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- AUTHOR SECTION --- */
+.author-section {
+    background: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.author-container {
+    display: flex;
+    max-width: 1000px;
+    gap: 4rem;
+    align-items: center;
+    background: var(--white);
+    padding: 3rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.author-img {
+    width: 250px;
+    height: 250px;
+    background-color: #cbd5e1;
+    border-radius: 50%;
+    /* Circle image */
+    flex-shrink: 0;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2364748b"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    border: 4px solid var(--accent);
+}
+
+.author-bio-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.author-bio-link:hover {
+    border-color: var(--accent);
+}
+
+.author-content h3 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+/* --- PURCHASE SECTION --- */
+.purchase-section {
+    text-align: center;
+    background: var(--white);
+    padding-bottom: 8rem;
+}
+
+.vendor-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+}
+
+.vendor-btn {
+    padding: 1rem 2.5rem;
+    border: 2px solid #cbd5e1;
+    background: transparent;
+    font-weight: 700;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: all 0.2s;
+    min-width: 200px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.vendor-btn.primary {
+    background: #FF9900;
+    /* Amazon Orange */
+    border-color: #FF9900;
+    color: var(--white);
+}
+
+.vendor-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* --- FOOTER --- */
+footer {
+    background: var(--primary);
+    color: #64748b;
+    padding: 3rem 5%;
+    text-align: center;
+    font-size: 0.9rem;
+    border-top: 1px solid #1e293b;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 900px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 2rem;
+    }
+
+    .hero-content {
+        margin-bottom: 3rem;
+    }
+
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--white);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 2rem 0;
+        gap: 2rem;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .mobile-toggle {
+        display: flex;
+    }
+
+    /* Hidden on mobile for simplicity */
+    .author-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .cta-group {
+        justify-content: center;
+    }
+}
