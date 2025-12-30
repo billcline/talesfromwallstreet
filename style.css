@@ -474,11 +474,18 @@ h2 {
     border-radius: 50%;
     /* Circle image */
     flex-shrink: 0;
-    background-image: url('image.jpg');
+    /* Use optimized background images with a larger fallback for bigger screens */
+    background-image: url('images/image-800.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     border: 4px solid var(--accent);
+
+@media (min-width: 1000px) {
+    .author-img {
+        background-image: url('images/image-1600.jpg');
+    }
+}
 }
 
 .author-bio-link {
