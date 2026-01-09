@@ -319,6 +319,28 @@ h2 {
     transform-origin: left;
 }
 
+.book-wrapper {
+    position: relative;
+    display: inline-block;
+    /* Ensure the wrapper respects the constraints of the image */
+    width: fit-content;
+}
+
+.author-overlay {
+    position: absolute;
+    /* Positioning it within the black neck area */
+    bottom: 65px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--white);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    object-fit: cover;
+}
+
 /* --- TICKER TAPE --- */
 .ticker-wrap {
     width: 100%;
@@ -489,11 +511,11 @@ h2 {
     background-size: cover;
     border: 4px solid var(--accent);
 
-@media (min-width: 1000px) {
-    .author-img {
-        background-image: url('images/image-1600.jpg');
+    @media (min-width: 1000px) {
+        .author-img {
+            background-image: url('images/image-1600.jpg');
+        }
     }
-}
 }
 
 .author-bio-link {
